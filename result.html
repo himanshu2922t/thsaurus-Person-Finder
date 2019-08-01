@@ -1,0 +1,383 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>thsaurus - find your missing one</title>
+    <link rel="icon" type="x-icon/image" href="images/logo.png">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .header {
+            overflow: hidden;
+            background-color: #f1f1f1;
+            padding: 20px 10px;
+        }
+
+            .header a {
+                float: left;
+                color: black;
+                text-align: center;
+                padding: 12px;
+                text-decoration: none;
+                font-size: 18px;
+                line-height: 25px;
+                border-radius: 4px;
+            }
+
+                .header a.logo {
+                    font-size: 25px;
+                    font-weight: bold;
+                }
+
+                .header a.active {
+                    background-color: dodgerblue;
+                    color: white;
+                }
+
+        .header-right {
+            float: right;
+            margin-right: 20px;
+        }
+
+        @media screen and (max-width: 500px) {
+            .header a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .header-right {
+                float: none;
+            }
+        }
+
+        .header form.example {
+            margin-left: 120px;
+        }
+
+            .header form.example input[type=text] {
+                padding: 15px;
+                font-size: 16px;
+                border: none;
+                border-bottom-left-radius: 20px;
+                border-top-left-radius: 20px;
+                float: left;
+                width: 60%;
+                background: white;
+            }
+
+            .header form.example button {
+                float: left;
+                width: 5%;
+                padding: 15px;
+                background: #ddd;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+                border-bottom-right-radius: 20px;
+                border-top-right-radius: 20px;
+            }
+
+                .header form.example button:hover {
+                    background: #bbb;
+                }
+
+            .header form.example::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+        .at-grid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background: #FFF;
+            border: 1px solid #E2E9ED;
+        }
+
+            .at-grid[data-column="1"] .at-column {
+                width: 100%;
+                max-width: 100%;
+                min-width: 100%;
+                flex-basis: 100%;
+            }
+
+            .at-grid[data-column="2"] .at-column {
+                width: 50%;
+                max-width: 50%;
+                min-width: 50%;
+                flex-basis: 50%;
+            }
+
+            .at-grid[data-column="3"] .at-column {
+                width: 33.3333333333%;
+                max-width: 33.3333333333%;
+                min-width: 33.3333333333%;
+                flex-basis: 33.3333333333%;
+            }
+
+            .at-grid[data-column="4"] .at-column {
+                width: 25%;
+                max-width: 25%;
+                min-width: 25%;
+                flex-basis: 25%;
+            }
+
+            .at-grid[data-column="5"] .at-column {
+                width: 20%;
+                max-width: 20%;
+                min-width: 20%;
+                flex-basis: 20%;
+            }
+
+            .at-grid[data-column="6"] .at-column {
+                width: 16.6666666667%;
+                max-width: 16.6666666667%;
+                min-width: 16.6666666667%;
+                flex-basis: 16.6666666667%;
+            }
+
+            .at-grid[data-column="7"] .at-column {
+                width: 14.2857142857%;
+                max-width: 14.2857142857%;
+                min-width: 14.2857142857%;
+                flex-basis: 14.2857142857%;
+            }
+
+            .at-grid[data-column="8"] .at-column {
+                width: 12.5%;
+                max-width: 12.5%;
+                min-width: 12.5%;
+                flex-basis: 12.5%;
+            }
+
+            .at-grid[data-column="9"] .at-column {
+                width: 11.1111111111%;
+                max-width: 11.1111111111%;
+                min-width: 11.1111111111%;
+                flex-basis: 11.1111111111%;
+            }
+
+        .at-column {
+            z-index: 0;
+            position: relative;
+            background: #FFF;
+            box-shadow: 0 0 0 1px #E2E9ED;
+            padding: 10px;
+            box-sizing: border-box;
+            transition: box-shadow 0.2s ease, z-index 0s 0.2s ease, -webkit-transform 0.2s ease;
+            transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0.2s ease;
+            transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0.2s ease, -webkit-transform 0.2s ease;
+        }
+
+            .at-column:before {
+                content: "";
+                display: block;
+                padding-top: 100%;
+            }
+
+            .at-column:hover {
+                z-index: 1;
+                box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+                -webkit-transform: scale(1.05);
+                transform: scale(1.05);
+                transition: box-shadow 0.2s ease, z-index 0s 0s ease, -webkit-transform 0.2s ease;
+                transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0s ease;
+                transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0s ease, -webkit-transform 0.2s ease;
+            }
+
+                .at-column:hover .at-social {
+                    margin: 16px 0 0;
+                    opacity: 1;
+                }
+
+        @media (max-width: 800px) {
+            .at-column {
+                width: 50% !important;
+                max-width: 50% !important;
+                min-width: 50% !important;
+                flex-basis: 50% !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .at-column {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 100% !important;
+                flex-basis: 100% !important;
+            }
+        }
+
+        .at-user {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            text-align: center;
+        }
+
+        .at-user__avatar {
+            width: 98px;
+            height: 98px;
+            border-radius: 100%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+
+            .at-user__avatar img {
+                display: block;
+                width: 100%;
+                max-width: 100%;
+            }
+
+        .at-user__name {
+            color: #313435;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 2.625rem;
+        }
+
+        .at-user__title {
+            color: #6F808A;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.875rem;
+            line-height: 2.375rem;
+        }
+
+        
+        body {
+            background: #FFF;
+            font-family: 'Roboto', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1300px;
+            width: 100%;
+            margin: 100px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="thsaurus" style="height: 70px; margin-top: -20px;" /></a>
+        <form class="example" action="result.html" />
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+        <div class="header-right">
+            <a href="user.html"><i class="fa fa-user"></i>&nbsp; Hello Himanshu</a>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="at-grid" data-column="4">
+            <div class="at-column">
+                <div class="at-user">
+                    <div class="at-user__avatar"><img src="images/client/client1.png" /></div>
+                    <div class="at-user__name">Vishal</div>
+                    <div class="at-user__title">From Ajmer</div>
+                </div>
+            </div>
+            <div class="at-column">
+                <div class="at-user">
+                    <div class="at-user__avatar"><img src="images/client/client2.png" /></div>
+                    <div class="at-user__name">Varun</div>
+                    <div class="at-user__title">From Jaipur</div>
+                </div>
+            </div>
+            <div class="at-column">
+                <div class="at-user">
+                    <div class="at-user__avatar"><img src="images/client/client3.png" /></div>
+                    <div class="at-user__name">Abhishek</div>
+                    <div class="at-user__title">From Ahmedabad</div>
+                </div>
+            </div>
+            <div class="at-column">
+                <div class="at-user">
+                    <div class="at-user__avatar"><img src="images/client/client1.png" /></div>
+                    <div class="at-user__name">Rahul</div>
+                    <div class="at-user__title">From Bombay</div>
+                </div>
+            </div>
+            <div class="at-column">
+                <div class="at-user">
+                    <div class="at-user__avatar"><img src="images/client/client2.png" /></div>
+                    <div class="at-user__name">Tushar</div>
+                    <div class="at-user__title">From Udaipur</div>
+                </div>
+            </div>
+            <div class="at-column">
+                <div class="at-user">
+                    <div class="at-user__avatar"><img src="images/client/client3.png" /></div>
+                    <div class="at-user__name">Mohan Lal</div>
+                    <div class="at-user__title">From Delhi</div>
+                </div>
+            </div>
+            <div class="at-column">
+                <div class="at-user">
+                    <div class="at-user__avatar"><img src="images/client/client1.png" /></div>
+                    <div class="at-user__name">Meenakshi</div>
+                    <div class="at-user__title">From Ujjain</div>
+                </div>
+            </div>
+            <div class="at-column">
+                <div class="at-user">
+                    <div class="at-user__avatar"><img src="images/client/client2.png" /></div>
+                    <div class="at-user__name">Himanshu</div>
+                    <div class="at-user__title">From Pratapgarh</div>
+                </div>
+            </div>
+            <div class="at-column">
+                <div class="at-user">
+                    <div class="at-user__avatar"><img src="images/client/client3.png" /></div>
+                    <div class="at-user__name">Hemant</div>
+                    <div class="at-user__title">From Ratlam</div>
+                </div>
+            </div>
+            <div class="at-column">
+                <div class="at-user">
+                    <div class="at-user__avatar"><img src="images/client/client1.png" /></div>
+                    <div class="at-user__name">Ajay</div>
+                    <div class="at-user__title">From Indore</div>
+                </div>
+            </div>
+            <div class="at-column">
+                <div class="at-user">
+                    <div class="at-user__avatar"><img src="images/client/client2.png" /></div>
+                    <div class="at-user__name">Amit</div>
+                    <div class="at-user__title">From Banglore</div>
+                </div>
+            </div>
+            <div class="at-column">
+                <div class="at-user">
+                    <div class="at-user__avatar"><img src="images/client/client3.png" /></div>
+                    <div class="at-user__name">Navdeep</div>
+                    <div class="at-user__title">From Ujjain</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

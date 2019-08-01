@@ -1,0 +1,677 @@
+﻿
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>thsaurus - find your missing one</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="x-icon/image" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/space.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/overright.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <style>
+        #mySidenav a {
+            z-index:999;
+            position: fixed;
+            left: -125px;
+            padding: 15px;
+            width: 150px;
+            text-align: right;
+            text-decoration: none;
+            font-size: 16px;
+            color: white;
+            border-radius: 0 30px 30px 0;
+        }
+
+        #mySidenav a:hover {
+            left: 0;
+        }
+
+        #accountt {
+            top: 300px;
+            background-color: #264156;
+        }
+        #workk {
+            top: 400px;
+            background-color: #264156;
+        }
+
+        #featuree {
+            top: 500px;
+            background-color: #264156;
+        }
+        #mySidenav2 a {
+            z-index: 999;
+            position: fixed;
+            right: -125px;
+            padding: 15px;
+            width: 150px;
+            text-align: left;
+            text-decoration: none;
+            font-size: 16px;
+            color: white;
+            border-radius: 30px 0 0 30px;
+        }
+
+            #mySidenav2 a:hover {
+                right: 0;
+            }
+
+        #teamm {
+            top: 300px;
+            background-color: #264156;
+        }
+
+        #faqq {
+            top: 400px;
+            background-color: #264156;
+        }
+
+        #contactt {
+            top: 500px;
+            background-color: #264156;
+        }
+
+        #home_wrapper {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+
+        /*Search bar*/
+        form.example {
+            margin: auto;
+            width: 350px;
+        }
+
+            form.example input[type=text] {
+                padding: 15px;
+                font-size: 14px;
+                border: none;
+                border-bottom-left-radius: 20px;
+                border-top-left-radius: 20px;
+                float: left;
+                width: 80%;
+                background: rgba(241,243,245,1);
+                color: rgba(0, 0, 0, 0.42);
+            }
+
+                form.example input[type=text]:hover {
+                    background: rgba(241, 245, 247, 1);
+                }
+
+            form.example button {
+                float: left;
+                width: 20%;
+                padding: 14px;
+                background: #ddd;
+                font-size: 14px;
+                border: none;
+                cursor: pointer;
+                border-bottom-right-radius: 20px;
+                border-top-right-radius: 20px;
+            }
+
+                form.example button:hover {
+                    background: rgba(187, 187, 187, 0.80);
+                }
+
+            form.example::after {
+                content: "";
+                clear: both;
+                display: table;
+                border: none;
+            }
+
+        #snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+
+            #snackbar.show {
+                visibility: visible;
+                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+        
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#mainmenu" data-offset="50">
+    <div class="preloade">
+        <span><i class="ti-eye"></i></span>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="user.php" id="accountt">My Account  ></a>
+        <a href="#work" id="workk">How It Works  ></a>
+        <a href="#scrin" id="featuree">Screenshots  ></a>
+    </div>
+    <div id="mySidenav2" class="sidenav2">
+        <a href="#team" id="teamm"><  Team</a>
+        <a href="#faq" id="faqq"><  FAQ</a>
+        <a href="#contact" id="contactt"><  Contact Us</a>
+    </div>
+    <!--Header-Area-->
+    <header class="blue-bg relative fix" id="home">
+        <div class="section-bg overlay-bg angle-bg ripple ">
+            <div class="parallax-image"></div>
+        </div>
+
+        <!--Header-Text-->
+        <div class="container text-white">
+            <div class="row text-center">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                    <div class="space-70"></div>
+                    <h1>citizens corner to search your<br> missing one</h1>
+                    <div class="space-10"></div>
+                </div>
+            </div>
+            <div class="space-100"></div>
+        </div>
+        <!--Header-Text/-->
+    </header>
+    <!--Header-Area/-->
+    <!--Home Page-->
+    <img id="home_wrapper" src="images/homepage.png" alt="thsaurus" style="width:12%;" />
+    <div class="space-100"></div>
+    <div>
+        <form class="example" method="get" action="result.php" />
+        <input type="text" placeholder="Quick search someone.." name="search" aria-hidden="true">
+        <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <section>
+        <div class="space-20"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="well well-hover text-center">
+                        <a href="login/login.php">
+                            <p class="md-icon"><span class="ti-user"></span></p>
+                            <div class="space-10"></div>
+                            <h4 class="text-uppercase">Login / Register First</h4>
+                            <p>You have to register or login first. It is mandatory to provide your login details for legal aspects.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="well well-hover text-center">
+                        <a href="upload/form.php">
+                            <p class="md-icon"><span class="fa fa-question"></span></p>
+                            <div class="space-10"></div>
+                            <h4 class="text-uppercase">My Friend is Missing</h4>
+                            <p>If yor loved one is missing, contact us and they let the world know they are looking for someone.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="well well-hover text-center">
+                        <a href="#contact">
+                            <p class="md-icon"><span class="ti-eye"></span></p>
+                            <div class="space-10"></div>
+                            <h4 class="text-uppercase">Have sighted someone</h4>
+                            <p>If you have information or sighted someone who was missing, help people to reconnect with friends.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="space-20"></div>
+    </section>
+    <!--Home Page/-->
+    <!--Work-Section-->
+    <section class="gray-bg" id="work">
+        <div class="space-60"></div>
+        <div class="container">
+            <div class="row wow fadeInUp">
+                <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
+                    <h3 class="text-uppercase">How it work?</h3>
+                    <p>We accept data from registries and individuals in a common format and upload this data at our database and make search possible in a single place.</p>
+                </div>
+            </div>
+            <div class="space-60"></div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="hover-shadow">
+                        <div class="space-60">
+                            <img src="images/icon/icon1.png" alt="">
+                        </div>
+                        <div class="space-20"></div>
+                        <h5 class="text-uppercase">Login First</h5>
+                        <p>You have to login first to use this searchable missing persons database</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 text-center wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="hover-shadow">
+                        <div class="space-60">
+                            <img src="images/icon/icon2.png" alt="">
+                        </div>
+                        <div class="space-20"></div>
+                        <h5 class="text-uppercase">DATA Searching</h5>
+                        <p>thsaurus gets your submitted details and searches appropriate persons in data</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 text-center wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="hover-shadow">
+                        <div class="space-60">
+                            <img src="images/icon/icon3.png" alt="">
+                        </div>
+                        <div class="space-20"></div>
+                        <h5 class="text-uppercase">Validation</h5>
+                        <p>thsaurus validates your submitted details of person with all probable matches</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 text-center wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="hover-shadow">
+                        <div class="space-60">
+                            <img src="images/icon/icon4.png" alt="">
+                        </div>
+                        <div class="space-20"></div>
+                        <h5 class="text-uppercase">SHOW RESULT</h5>
+                        <p>Finally, thsaurus shows you a list of all probable rellevent results of missing one</p>
+                    </div>
+                </div>
+            </div>
+            <div class="space-60"></div>
+            <div class="row">
+                <div class="col-xs-12 col-md-8 col-md-offset-2 text-center wow fadeInUp">
+                    <div class="down-offset ">
+                        <img src="images/mobile1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="space-80"></div>
+    </section>
+    <!--Work-Section/-->
+    <!--Screenshot-Section-->
+    <section id="scrin">
+        <div class="space-60"></div>
+        <div class="container">
+            <div class="row wow fadeInUp">
+                <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
+                    <h3 class="text-uppercase">SCREENSHOTS</h3>
+                    <p>Some snaps of the various pages of our project - thsaurus....</p>
+                </div>
+            </div>
+            <div class="space-20"></div>
+            <div class="row wow fadeIn">
+                <div class="col-xs-12">
+                    <div class="space-60"></div>
+                    <div class="list_screen_slide">
+                        <div class="item">
+                            <a href="images/screen/screen1.png" class="work-popup">
+                                <img src="images/screen/screen1.png" alt="">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="images/screen/screen2.png" class="work-popup">
+                                <img src="images/screen/screen2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="images/screen/screen6.png" class="work-popup">
+                                <img src="images/screen/screen6.png" alt="">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="images/screen/screen4.png" class="work-popup">
+                                <img src="images/screen/screen4.png" alt="">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="images/screen/screen5.png" class="work-popup">
+                                <img src="images/screen/screen5.png" alt="">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="images/screen/screen1.png" class="work-popup">
+                                <img src="images/screen/screen1.png" alt="">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="images/screen/screen2.png" class="work-popup">
+                                <img src="images/screen/screen2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="images/screen/screen6.png" class="work-popup">
+                                <img src="images/screen/screen6.png" alt="">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="images/screen/screen4.png" class="work-popup">
+                                <img src="images/screen/screen4.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="space-40"></div>
+                </div>
+            </div>
+        </div>
+        <div class="space-80"></div>
+    </section>
+    <!--Screenshot-Section/-->
+    <!--Team-Section-->
+    <section class="gray-bg" id="team">
+        <div class="space-80"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
+                    <h3 class="text-uppercase">Developer Team</h3>
+                    <p>Our team members advance utmost dedication to innovative and technical excellence in each project. Here is your chance to know us better.</p>
+                </div>
+            </div>
+            <div class="space-60"></div>
+            <div class="row">
+                <div class="col-xs-push-6 col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="single-team relative panel fix">
+                        <img src="images/team/team3.jpg" alt="">
+                        <div class="team_details text-center">
+                            <h5 class="text-uppercase">Balkrishan Suthar</h5>
+                            <p>Developer</p>
+                            <div class="social-menu">
+                                <hr>
+                                <a href="https://www.facebook.com/balkrishan.suthar.9"  target="_blank"><span class="ti-facebook"></span></a>
+                                <a href="#"><span class="fa fa-github"></span></a>
+                                <a href="#"><span class="ti-linkedin"></span></a>
+                                <a href="#"><span class="ti-twitter-alt"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="single-team relative panel fix">
+                        <img src="images/team/team1.jpg" alt="">
+                        <div class="team_details text-center">
+                            <h5 class="text-uppercase">Himanshu Rathore</h5>
+                            <p>Developer</p>
+                            <div class="social-menu">
+                                <hr>
+                                <a href="https://www.facebook.com/himanshu.rathore.16100" target="_blank"><span class="ti-facebook"></span></a>
+                                <a href="#"><span class="fa fa-github"></span></a>
+                                <a href="#"><span class="ti-linkedin"></span></a>
+                                <a href="#"><span class="ti-twitter-alt"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="space-100"></div>
+    </section>
+    <!--Team-Section/-->
+    <!--Question-section-->
+    <section class="fix" id="faq">
+        <div class="space-80"></div>
+        <div class="container">
+            <div class="row wow fadeInUp">
+                <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
+                    <h3 class="text-uppercase">Frequently asked questions</h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="space-60"></div>
+            <div class="row">
+                <div class="col-xs-12 col-md-6 wow fadeInUp">
+                    <div class="space-60"></div>
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">What is thsaurus ? </a></h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse in">
+                                <div class="panel-body">thsaurus is a web application that allows individuals to post and search for the status of relatives or friends affected by a disaster. It is a searchable missing person database.</div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Is registration mendatory ?</a></h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse">
+                                <div class="panel-body">Yes, you have to register first. It is mendatory to provide your login details as per legal aspects.</div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">How does thsaurus keep records up to date ?</a></h4>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse">
+                                <div class="panel-body">thsaurus depends on admin to update and remove records when no longer relevant. Users can also report spam, offensive content, or incorrect information.</div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Who has access to the person finder data ?</a></h4>
+                            </div>
+                            <div id="collapse4" class="panel-collapse collapse">
+                                <div class="panel-body">All data entered into thsaurus is available to the registered users only and searchable and accessible by registered users. thsaurus does not review or verify the accuracy of the data. The standard Terms of Service apply to all users of thsaurus.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden-xs hidden-sm col-md-5 col-md-offset-1 wow fadeInRight ">
+                    <img src="images/2mobile.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="space-80"></div>
+    </section>
+    <!--Question-section/-->
+    <!--Download-Section-->
+    <section class="relative fix" id="contact">
+        <div class="space-80"></div>
+        <div class="section-bg overlay-bg">
+            <img src="images/bg3.jpg" alt="">
+        </div>
+        <div class="container">
+            <div class="row wow fadeInUp">
+                <div class="col-xs-12 col-md-6 col-md-offset-3 text-center text-white">
+                    <h3 class="text-uppercase">Contact Us</h3>
+                    <p>Whatever your needs, we're looking forward to hearing from you.</p>
+                </div>
+            </div>
+            <div class="space-60"></div>
+        </div>
+        <div class="space-80"></div>
+    </section>
+
+    <!--Footer-area-->
+    <footer class="black-bg">
+        <div class="container">
+            <div class="row">
+                <div class="offset-top">
+                    <div class="col-xs-12 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="well well-lg">
+                            <h3>Your Query Here</h3>
+                            <div class="space-20"></div>
+                            <form action="process.php" id="contact-form" method="post">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group">
+                                            <label for="form-name" class="sr-only">Name</label>
+                                            <input type="text" class="form-control" id="form-name" name="form-name" placeholder="Name" required>
+                                        </div>
+                                        <div class="space-10"></div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group">
+                                            <label for="form-email" class="sr-only">Email</label>
+                                            <input type="email" class="form-control" id="form-email" name="form-email" placeholder="Email" required>
+                                        </div>
+                                        <div class="space-10"></div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label for="form-subject" class="sr-only">Email</label>
+                                            <input type="text" class="form-control" id="form-subject" name="form-subject" placeholder="Subject" required>
+                                        </div>
+                                        <div class="space-10"></div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label for="form-message" class="sr-only">comment</label>
+                                            <textarea class="form-control" rows="6" id="form-message" name="form-message" placeholder="Message" required></textarea>
+                                        </div>
+                                        <div class="space-10"></div>
+                                            <button class="btn btn-link no-round text-uppercase" type="submit" onclick="myFunction()">Send message</button>
+                                        <div id="snackbar">Thanks, We will contact you sortly.</div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="well well-lg">
+                            <h3>Address</h3>
+                            <div class="space-20"></div>
+                            <p>Poornima Institute of Engineering & Technology<br />ISI-2, Poornima Marg<br /> RIICO Institutional Area<br /> Sitapura<br />Jaipur-302022<br />Rajasthan</p>
+                            <div class="space-20"></div>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="border-icon sm"><span class="ti-headphone"></span></div>
+                                        </td>
+                                        <td><a href="callto:+917073001938">+91-7073001938</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="border-icon sm"><span class="ti-email"></span></div>
+                                        </td>
+                                        <td>
+                                            <a href="mailto:2017pietcshimanshu045@poornima.org">2017pietcshimanshu045@poornima.org</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="border-icon sm"><span class="ti-location-pin"></span></div>
+                                        </td>
+                                        <td>
+                                            <address>PIET Campus, Sitapura, Jaipur-302022, Rajasthan, India</address>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="space-10"></div>
+
+            <div class="row text-white wow fadeIn">
+                <div class="col-xs-12 text-center">
+                    <div class="space-20"></div>
+                    <p>@ 2018 <a href="https://plus.google.com/112706287559189168265" target="_blank">thcloudwalker</a>, all right reserved.</p>
+                </div>
+            </div>
+            <div class="space-20"></div>
+        </div>
+    </footer>
+    <!--Footer-area-->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+        }
+    </script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/scrollUp.min.js"></script>
+    <script src="js/magnific-popup.min.js"></script>
+    <script src="js/ripples-min.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script src="js/spectragram.min.js"></script>
+    <script src="js/ajaxchimp.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/plugins.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTS_KEDfHXYBslFTI_qPJIybDP3eceE-A&sensor=false"></script>
+    <script src="js/maps.js"></script>
+</body>
+
+</html>
