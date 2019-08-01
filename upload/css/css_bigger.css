@@ -1,0 +1,26 @@
+﻿/* CSS Document */
+
+body {
+    font-size: 67.5% !important;
+}
+
+.nav ul li a {
+    padding: 0 0.7em !important;
+}
+
+.nav ul.sub_menu li a {
+    padding: 0 9.5px !important;
+}
+
+.footLinkPan ul {
+    margin: 10px 35px 10px 0 !important;
+}
+
+
+.search_block p {
+    font-size: 1.15em !important;
+}
+
+.search_block input {
+    width: 320px;
+}

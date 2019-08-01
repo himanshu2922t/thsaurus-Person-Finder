@@ -1,0 +1,43 @@
+﻿.modal {
+    /* display: none; */
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 25%;
+    top: 10%;
+    width: 40%;
+    height: 60%;
+    overflow: auto;
+    background-color: white;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #999;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.portrait img {
+    width: 100%;
+}

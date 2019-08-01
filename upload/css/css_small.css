@@ -1,0 +1,13 @@
+﻿/* CSS Document */
+
+body {
+    font-size: 55% !important;
+}
+
+.nav ul li a {
+    padding: 0 14.5px !important;
+}
+
+.nav ul.sub_menu li a {
+    padding: 0 18.7px !important;
+}
